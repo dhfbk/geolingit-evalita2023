@@ -11,6 +11,8 @@ import argparse
 from haversine import haversine, Unit
 from sklearn.metrics import classification_report
 
+DEV_REGIONS = ["Calabria", "Campania", "Emilia Romagna", "Friuli-Venezia Giulia", "Lazio", "Liguria", "Lombardia", "Piemonte", "Puglia", "Sardegna", "Sicilia", "Toscana", "Veneto"]
+
 
 def evaluate(subtask, gold_filepath, pred_filepath):
     """
@@ -40,7 +42,7 @@ def evaluate(subtask, gold_filepath, pred_filepath):
                     golds.append(line_gold.rstrip("\n").split("\t")[2])
                     preds.append(line_pred.rstrip("\n").split("\t")[2])
 
-        print(classification_report(golds, preds))
+        print(classification_report(golds, preds, labels=DEV_REGIONS))
 
     # Case subtask "b"
     elif subtask == "b":
