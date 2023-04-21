@@ -5,7 +5,7 @@ This repository contains useful materials related to the [GeoLingIt shared task]
 - :page_with_curl: **[Get the data](#page_with_curl-get-the-data)**
 - :triangular_ruler: **[Data format](#triangular_ruler-data-format)**
 - :rocket: **[Submission requirements](#rocket-submission-requirements)**
-- :bar_chart: **[Evaluation scorer](#bar_chart-evaluation-and-scorer)**
+- :bar_chart: **[Evaluation and scorer](#bar_chart-evaluation-and-scorer)**
 - :pushpin: **[Baselines](#pushpin-baselines)**
 - :alarm_clock: **[Important dates](#alarm_clock-important-dates)**
 
@@ -57,7 +57,7 @@ A tab-separated file with an example per line and the first line as header. Only
 
 ```
 id	text	region
-1	Non...	Marche
+1	In...	Lombardia
 2	Ma...	Campania
 ...	...	...
 ```
@@ -68,7 +68,7 @@ A tab-separated file with an example per line and the first line as header. Only
 
 ```
 id	text	latitude	longitude
-1	Non...	43.8941785	12.86729415
+1	In...	45.4613453	9.15933655
 2	Ma...	40.8541123	14.24345155
 ...	...	...	...
 ```
@@ -89,7 +89,7 @@ id	text	latitude	longitude
 
 ### :bar_chart: Evaluation and scorer
 
-Predictions will be evaluated according to **macro F1 score** (Subtask A) and **mean distance in km** (Subtask B). We provide participants with a scorer (i.e., `eval.py`). The usage is the following:
+Predictions will be evaluated according to **macro F1 score** (Subtask A, *the higher, the better*) and **mean distance in km** (Subtask B, *the lower, the better*). We provide participants with a scorer (i.e., `eval.py`). The usage is the following:
 
 ```
 python eval.py -S $SUBTASK -G $GOLD_FILEPATH -P $PRED_FILEPATH
@@ -100,7 +100,7 @@ python eval.py -S $SUBTASK -G $GOLD_FILEPATH -P $PRED_FILEPATH
 
 #### Requirements
 
-You may need to install two python packages to run the script: `scikit-learn==1.2.1` and `haversine==2.7.0`.
+You may need to install two python packages to run the script: `scikit-learn==1.2.1` and `haversine==2.8.0`.
 
 ### :pushpin: Baselines
 
@@ -108,11 +108,23 @@ We consider the following baselines to allow participants to assess their result
 
 #### Subtask A
 
-- **Most frequent baseline (MFB)**: this baseline always guesses the most frequent region in the training set (i.e., Lazio) for all validation instances. The macro F1 score on `dev_a.tsv` is: **0.03**.
+- **Most frequent baseline (MFB)**: this baseline always guesses the most frequent region in the training set (i.e., Lazio) for all validation instances. The macro F1 score on `dev_a.tsv` is: **0.0265**.
+- **Logistic regression (LR)**: a traditional machine learning classifier that employ default scikit-learn hyperparameters. The macro F1 score on `dev_a.tsv` is: **0.5872**.
+
+| Baseline name          | Precision | Recall | Macro F1 |
+|------------------------|-----------|--------|----------|
+| Most frequent baseline | 0.0160    | 0.0769 | 0.0265   |
+| Logistic regression    | 0.7686    | 0.5389 | 0.5872   |
 
 #### Subtask B
 
 - **Centroid baseline (CB)**: this baseline computes the center point (latitude, longitude) from the training set and predicts it for all test instances. The mean distance in km on `dev_a.tsv` is: **301.65**.
+- ***k*-nearest neighbors (*k*NN)**: a traditional machine learning regression model that employ default scikit-learn hyperparameters. The mean distance in km on `dev_a.tsv` is: **281.03**.
+
+| Baseline name       | Avg dist (km) |
+|---------------------|---------------|
+| Centroid baseline   | 301.65 km     |
+| k-nearest neighbors | 281.03 km     |
 
 ### :alarm_clock: Important dates
 
