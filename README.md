@@ -1,6 +1,14 @@
 # :earth_africa: GeoLingIt shared task
 
-This repository contains useful materials related to the [GeoLingIt shared task](https://sites.google.com/view/geolingit) at [EVALITA 2023](https://www.evalita.it/campaigns/evalita-2023/). You can find more information about how to participate, how data looks like, and which subtasks are available on the [shared task website](https://sites.google.com/view/geolingit).
+This repository contains useful materials related to the [GeoLingIt shared task](https://sites.google.com/view/geolingit) at [EVALITA 2023](https://www.evalita.it/campaigns/evalita-2023/). You can find more information about how to participate, how data looks like, and which subtasks and tracks are available on the [shared task website](https://sites.google.com/view/geolingit).
+
+- :page_with_curl: **[Get the data](#page_with_curl-get-the-data)**
+- :triangular_ruler: **[Data format](#triangular_ruler-data-format)**
+- :rocket: **[Submission requirements](#rocket-submission-requirements)**
+- :bar_chart: **[Evaluation scorer](#bar_chart-evaluation-and-scorer)**
+- :pushpin: **[Baselines](#pushpin-baselines)**
+- :alarm_clock: **[Important dates](#alarm_clock-important-dates)**
+
 
 ### :page_with_curl: Get the data
 
@@ -8,26 +16,76 @@ If you are interested in participating in the GeoLingIt shared task, please fill
 
 ### :triangular_ruler: Data format
 
-The dataset is in a tab-separated format, with an example per line and the first line as header. We provide `train_a.tsv` and `dev_a.tsv` for **Subtask A**, and `train_b.tsv` and `dev_b.tsv` for **Subtask B**. Test data will be available during the evaluation window (i.e., May 7th-14th, 2023). Depending on the subtask, the column with answers differ as follows.
+The dataset is in a tab-separated format, with an example per line and the first line as header. We provide `train_a.tsv` and `dev_a.tsv` for **Subtask A**, and `train_b.tsv` and `dev_b.tsv` for **Subtask B**. Test data for both subtasks (`test_a.tsv` and `test_b.tsv`) will be available during the evaluation window (i.e., May 7th-14th, 2023). Depending on the subtask, the column(s) containing gold label(s) differ(s) as follow.
+
+***Note**: The format is exactly the same for both the standard track and the special track, as the latter is a subset of the former, restricted to an area chosen by participants ([details on tracks here](https://sites.google.com/view/geolingit/task-description)).*
 
 #### Subtask A
 
-Each example has three columns:
+Each example in `train_a.tsv` and `dev_a.tsv` has three columns:
 - **id**: the tweet identifier, that we programmatically change to preserve user's anonymity;
 - **text**: the text of the tweet, with masked user mentions, email addresses, URLs, and locations from cross-posting;
-- **region**: the region of Italy in a string format.
+- **region** (*gold label*): the region of Italy in a string format.
 
-**Note**: the format of prediction files for this subtask must follow this exact format to be properly evaluated.
+**Note**: `test_a.tsv` follows the same format above but with no gold label column (to be predicted).
 
 #### Subtask B
 
-Each example has four columns:
+Each example in `train_b.tsv` and `dev_b.tsv` has four columns:
 - **id**: the tweet identifier, that we programmatically change to preserve user's anonymity;
 - **text**: the text of the tweet, with masked user mentions, email addresses, URLs, and locations from cross-posting;
-- **latitude**: a float representing the latitude coordinate of the tweet;
-- **longitude**: a float representing the longitude coordinate of the tweet.
+- **latitude** (*gold label 1*): a float representing the latitude coordinate of the tweet;
+- **longitude** (*gold label 2*): a float representing the longitude coordinate of the tweet.
 
-**Note**: the format of prediction files for this subtask must follow this exact format to be properly evaluated.
+**Note**: `test_b.tsv` follows the same format above but with no gold label columns (to be predicted).
+
+### :rocket: Submission requirements
+
+Test data for both subtasks will be made available on **May 7th, 2023** and participants can submit their predictions during the evaluation window (i.e., **May 7th-14th, 2023**). Results will be communicated to participants by May 30th, 2023.
+
+We allow participants to submit **up to 3 runs for each track and subtask** (i.e., a team participating in both tracks and in all subtasks will be able to submit up to a total of 12 runs, of which up to 3 for each subtask). Different runs can reflect e.g., different solutions or different configurations of the same system.
+
+***Note**: Participants are allowed to use external resources in addition to (or in place of) the data provided by the organizers to train their models, e.g., pre-trained models, dictionaries and lexicons, existing datasets, and newly annotated data. **The only external source that is not allowed is Twitter, since some tweets can be part of our test set**.*
+
+#### Submission format
+
+Prediction files must be formatted **the same way as training and development data** (i.e., practically, just by filling the missing gold label column(s) on the test data files).
+
+##### Subtask A
+
+A tab-separated file with an example per line and the first line as header. Only the **third column** (`region`) will be used for evaluation (you can just leave the `text` empty to be sure to avoid formatting issues).
+
+```
+id	text	region
+1	Non...	Marche
+2	Ma...	Campania
+...	...	...
+```
+
+##### Subtask B
+
+A tab-separated file with an example per line and the first line as header. Only the **third and fourth columns** (`latitude` and `longitude`) will be used for evaluation (you can just leave the `text` empty to be sure to avoid formatting issues).
+
+```
+id	text	latitude	longitude
+1	Non...	43.8941785	12.86729415
+2	Ma...	40.8541123	14.24345155
+...	...	...	...
+```
+
+#### How to submit your runs
+
+**[1]** Name your submission file(s) following the naming convention **`TEAM.TRACK.SUBTASK.RUN`**, where:
+- **TEAM**: the name of your team;
+- **TRACK**: the name of the track, i.e., either `standard` or `special`. In the latter case, please also attach the 3-letter initials for regions included in your special track participation (e.g., *special-sic-cal-pug*);
+- **SUBTASK**: the identifier of the subtask, i.e., either `a` or `b`;
+- **RUN**: an incremental identifier starting from 1 denoting your track-subtask run (e.g., `1`, `2`, or `3`).
+
+*For instance, if you are participating in the standard track for both the subtasks and send a run for each for your team named "Pippo", your run names would be "Pippo.standard.a.1" and "Pippo.standard.b.1"*.
+
+**[2]** Compress all your run files as a ZIP file named `TEAM.zip` (where TEAM is the name of your team).
+
+**[3]** Send an email to geolingit@gmail.com with subject **GeoLingIt: TEAM submission** attaching `TEAM.zip`.
 
 ### :bar_chart: Evaluation and scorer
 
@@ -36,13 +94,13 @@ Predictions will be evaluated according to **macro F1 score** (Subtask A) and **
 ```
 python eval.py -S $SUBTASK -G $GOLD_FILEPATH -P $PRED_FILEPATH
 ```
-- `$SUBTASK`: The subtask the submission refers to. Choices: ['`a`', '`b`'].
+- `$SUBTASK`: The subtask the run refers to. Choices: ['`a`', '`b`'].
 - `$GOLD_FILEPATH`: Path to the gold standard for the subtask.
 - `$PRED_FILEPATH`: Path to the file that contains predictions for the subtask, with the same format as `$GOLD_FILEPATH`.
 
 #### Requirements
 
-You will need to install two python packages to run the script: `scikit-learn==1.2.1` and `haversine==2.7.0`.
+You may need to install two python packages to run the script: `scikit-learn==1.2.1` and `haversine==2.7.0`.
 
 ### :pushpin: Baselines
 
@@ -55,7 +113,6 @@ We consider the following baselines to allow participants to assess their result
 #### Subtask B
 
 - **Centroid baseline (CB)**: this baseline computes the center point (latitude, longitude) from the training set and predicts it for all test instances. The mean distance in km on `dev_a.tsv` is: **301.65**.
-
 
 ### :alarm_clock: Important dates
 
