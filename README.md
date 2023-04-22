@@ -41,7 +41,7 @@ Each example in `train_b.tsv` and `dev_b.tsv` has four columns:
 
 ### :rocket: Submission requirements
 
-Test data for both subtasks will be made available on **May 7th, 2023** and participants can submit their predictions during the evaluation window (i.e., **May 7th-14th, 2023**). Results will be communicated to participants by May 30th, 2023.
+Test data for both subtasks (`test_a.tsv` and `test_b.tsv`) will be made available on **May 7th, 2023** and participants can submit their predictions during the evaluation window (i.e., **May 7th-14th, 2023**). Results will be communicated to participants by May 30th, 2023.
 
 We allow participants to submit **up to 3 runs for each track and subtask** (i.e., a team participating in both tracks and in all subtasks will be able to submit up to a total of 12 runs, of which up to 3 for each subtask). Different runs can reflect e.g., different solutions or different configurations of the same system.
 
@@ -49,7 +49,9 @@ We allow participants to submit **up to 3 runs for each track and subtask** (i.e
 
 #### Submission format
 
-Prediction files must be formatted **the same way as training and development data** (i.e., practically, just by filling the missing gold label column(s) on the test data files).
+Prediction files must be formatted **the same way as training and development data** (i.e., practically, just by filling the missing gold label column(s) on the test data files). 
+
+***Note**: For the special track, we require participants to send predictions for all instances on the `test_a.tsv` and/or `test_b.tsv` file(s) as for teams participating to the standard track, regardless of the set of regions chosen. Then, we will consider only test instances that actually belong to the selected regions for the formal evaluation on the special track. This is to avoid to indirectly let standard track participants know to which regions some of the test instances belong during the evaluation window, and thus avoid potential cheating.*
 
 ##### Subtask A
 
