@@ -106,7 +106,7 @@ You may need to install two python packages to run the script: `scikit-learn==1.
 
 ### :pushpin: Baselines
 
-We consider the following baselines to allow participants to assess their results during development (further baselines will be provided in the coming weeks!).
+We consider the following baselines to allow participants to assess their results during development.
 
 #### Subtask A
 
