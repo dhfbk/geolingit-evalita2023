@@ -16,7 +16,7 @@ If you are interested in participating in the GeoLingIt shared task, please fill
 
 ### :triangular_ruler: Data format
 
-The dataset is in a tab-separated format, with an example per line and the first line as header. We provide `train_a.tsv` and `dev_a.tsv` for **Subtask A**, and `train_b.tsv` and `dev_b.tsv` for **Subtask B**. Test data for both subtasks (`test_a.tsv` and `test_b.tsv`) will be available during the evaluation window (i.e., May 7th-14th, 2023). Depending on the subtask, the column(s) containing gold label(s) differ(s) as follow.
+The dataset is in a tab-separated format, with an example per line and the first line as header. We provide `train_a.tsv` and `dev_a.tsv` for **Subtask A**, and `train_b.tsv` and `dev_b.tsv` for **Subtask B**. Test data for both subtasks (`test.tsv`) will be available during the evaluation window (i.e., May 7th-14th, 2023). Depending on the subtask, the column(s) in train/dev files containing gold label(s) differ(s) as follow.
 
 ***Note**: The format is exactly the same for both the standard track and the special track, as the latter is a subset of the former, restricted to an area chosen by participants ([details on tracks here](https://sites.google.com/view/geolingit/task-description)).*
 
@@ -27,7 +27,7 @@ Each example in `train_a.tsv` and `dev_a.tsv` has three columns:
 - **text**: the text of the tweet, with masked user mentions, email addresses, URLs, and locations from cross-posting;
 - **region** (*gold label*): the region of Italy in a string format.
 
-**Note**: `test_a.tsv` follows the same format above but with no gold label column (to be predicted).
+**Note**: `test.tsv` follows the same format above but with no gold label column (to be predicted).
 
 #### Subtask B
 
@@ -37,21 +37,21 @@ Each example in `train_b.tsv` and `dev_b.tsv` has four columns:
 - **latitude** (*gold label 1*): a float representing the latitude coordinate of the tweet;
 - **longitude** (*gold label 2*): a float representing the longitude coordinate of the tweet.
 
-**Note**: `test_b.tsv` follows the same format above but with no gold label columns (to be predicted).
+**Note**: `test.tsv` follows the same format above but with no gold label columns (to be predicted).
 
 ### :rocket: Submission requirements
 
-Test data for both subtasks (`test_a.tsv` and `test_b.tsv`) will be made available on **May 7th, 2023** and participants can submit their predictions during the evaluation window (i.e., **May 7th-14th, 2023**). Results will be communicated to participants by May 30th, 2023.
+Test data to be used for either one or both subtasks (`test.tsv`) will be made available on **May 7th, 2023** and participants can submit their predictions during the evaluation window (i.e., **May 7th-14th, 2023**). Results will be communicated to participants by May 30th, 2023 along with the 1<=k<=7 additional regions included in test data and unknown during development.
 
 We allow participants to submit **up to 3 runs for each track and subtask** (i.e., a team participating in both tracks and in all subtasks will be able to submit up to a total of 12 runs, of which up to 3 for each subtask). Different runs can reflect e.g., different solutions or different configurations of the same system.
 
-***Note**: Participants are allowed to use external resources in addition to (or in place of) the data provided by the organizers to train their models, e.g., pre-trained models, dictionaries and lexicons, existing datasets, and newly annotated data. **The only external source that is not allowed is Twitter, since some tweets can be part of our test set**.*
+***Note**: Participants are allowed to use external resources in addition to (or in place of) the data provided by the organizers to train their models, e.g., pre-trained models, dictionaries and lexicons, existing datasets, and newly annotated data. **The only external source that is not allowed is Twitter, since some tweets can be part of our test set**. Subtask A gold labels cannot be used as features for Subtask B, and viceversa.*
 
 #### Submission format
 
-Prediction files must be formatted **the same way as training and development data** (i.e., practically, just by filling the missing gold label column(s) on the test data files). 
+Prediction files must be formatted **the same way as training and development data** (i.e., practically, just by filling the missing gold label column(s) on the test data file). 
 
-***Note**: For the special track, we require participants to send predictions for all instances on the `test_a.tsv` and/or `test_b.tsv` file(s) as for teams participating to the standard track, regardless of the set of regions chosen. Then, we will consider only test instances that actually belong to the selected regions for the formal evaluation on the special track. This is to avoid to indirectly let standard track participants know to which regions some of the test instances belong during the evaluation window, and thus avoid potential cheating.*
+***Note**: For the special track, we require participants to send predictions for all instances on the `test.tsv`file as for teams participating to the standard track, regardless of the set of regions chosen. Then, we will consider only test instances that actually belong to the selected regions for the formal evaluation on the special track. This is to avoid to indirectly let standard track participants know to which regions some of the test instances belong during the evaluation window, and thus avoid potential cheating.*
 
 ##### Subtask A
 
@@ -111,7 +111,7 @@ We consider the following baselines to allow participants to assess their result
 #### Subtask A
 
 - **Most frequent baseline (MFB)**: this baseline always guesses the most frequent region in the training set (i.e., Lazio) for all validation instances. The macro F1 score on `dev_a.tsv` is: **0.0265**.
-- **Logistic regression (LR)**: a traditional machine learning classifier that employ default scikit-learn hyperparameters. The macro F1 score on `dev_a.tsv` is: **0.5872**.
+- **Logistic regression (LR)**: a traditional machine learning classifier that employs default scikit-learn hyperparameters. The macro F1 score on `dev_a.tsv` is: **0.5872**.
 
 | Baseline name          | Precision | Recall | Macro F1 |
 |------------------------|-----------|--------|----------|
@@ -121,7 +121,7 @@ We consider the following baselines to allow participants to assess their result
 #### Subtask B
 
 - **Centroid baseline (CB)**: this baseline computes the center point (latitude, longitude) from the training set and predicts it for all test instances. The mean distance in km on `dev_a.tsv` is: **301.65**.
-- ***k*-nearest neighbors (*k*NN)**: a traditional machine learning regression model that employ default scikit-learn hyperparameters. The mean distance in km on `dev_a.tsv` is: **281.03**.
+- ***k*-nearest neighbors (*k*NN)**: a traditional machine learning regression model that employs default scikit-learn hyperparameters. The mean distance in km on `dev_a.tsv` is: **281.03**.
 
 | Baseline name       | Avg dist (km) |
 |---------------------|---------------|
