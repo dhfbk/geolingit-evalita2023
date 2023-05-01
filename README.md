@@ -12,7 +12,7 @@ This repository contains useful materials related to the [GeoLingIt shared task]
 
 ### :page_with_curl: Get the data
 
-If you are interested in participating in the GeoLingIt shared task, please fill out the [**expression of interest form**](https://forms.gle/TW2NveAZMZodF7Z59) by EVALITA organizers (by Apr 30th, 2023) indicating **"GeoLingIt – Geolocation of Linguistic Variation in Italy"** as preference. We will send to you the link to join the dedicated Google Group, from where you can obtain the development data. There you can keep in touch with us and ask any shared task-related questions.
+If you are interested in participating in the GeoLingIt shared task, please fill out the [**expression of interest form**](https://forms.gle/TW2NveAZMZodF7Z59) by EVALITA organizers (by Apr 30th, 2023) indicating **"GeoLingIt – Geolocation of Linguistic Variation in Italy"** as preference. Once this date has passed, please contact us at geolingit@gmail.com. We will send to you the link to join the dedicated Google Group, from where you can obtain the development data. There you can keep in touch with us and ask any shared task-related questions.
 
 ### :triangular_ruler: Data format
 
