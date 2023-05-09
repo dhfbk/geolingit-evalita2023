@@ -64,6 +64,8 @@ id	text	region
 ...	...	...
 ```
 
+*Note: the first column of the test set starts at id 14222, the snippet above is just an example of the submission format.*
+
 ##### Subtask B
 
 A tab-separated file with an example per line and the first line as header. Only the **third and fourth columns** (`latitude` and `longitude`) will be used for evaluation (you can just leave the `text` empty to be sure to avoid formatting issues).
@@ -74,6 +76,8 @@ id	text	latitude	longitude
 2	Ma...	40.8541123	14.24345155
 ...	...	...	...
 ```
+
+*Note: the first column of the test set starts at id 14222, the snippet above is just an example of the submission format.*
 
 #### How to submit your runs
 
