@@ -16,7 +16,7 @@ If you are interested in participating in the GeoLingIt shared task, please fill
 
 ### :triangular_ruler: Data format
 
-The dataset is in a tab-separated format, with an example per line and the first line as header. We provide `train_a.tsv` and `dev_a.tsv` for **Subtask A**, and `train_b.tsv` and `dev_b.tsv` for **Subtask B**. Test data for both subtasks (`test.tsv`) will be available during the evaluation window (i.e., May 7th-14th, 2023). Depending on the subtask, the column(s) in train/dev files containing gold label(s) differ(s) as follow.
+The dataset is in a tab-separated format, with an example per line and the first line as header. We provide `train_a.tsv` and `dev_a.tsv` for **Subtask A**, and `train_b.tsv` and `dev_b.tsv` for **Subtask B**. Test data for both subtasks (`test.tsv`) will be available during the evaluation window (i.e., May 7th-17th, 2023). Depending on the subtask, the column(s) in train/dev files containing gold label(s) differ(s) as follow.
 
 ***Note**: The format is exactly the same for both the standard track and the special track, as the latter is a subset of the former, restricted to an area chosen by participants ([details on tracks here](https://sites.google.com/view/geolingit/task-description)).*
 
@@ -41,7 +41,7 @@ Each example in `train_b.tsv` and `dev_b.tsv` has four columns:
 
 ### :rocket: Submission requirements
 
-Test data to be used for either one or both subtasks (`test.tsv`) will be made available on **May 7th, 2023** and participants can submit their predictions during the evaluation window (i.e., **May 7th-14th, 2023**). Results will be communicated to participants by May 30th, 2023 along with the 1<=k<=7 additional regions included in test data and unknown during development.
+Test data to be used for either one or both subtasks (`test.tsv`) will be made available on **May 7th, 2023** and participants can submit their predictions during the evaluation window (i.e., **May 7th-17th, 2023**). Results will be communicated to participants by May 30th, 2023 along with the 1<=k<=7 additional regions included in test data and unknown during development.
 
 We allow participants to submit **up to 3 runs for each track and subtask** (i.e., a team participating in both tracks and in all subtasks will be able to submit up to a total of 12 runs, of which up to 3 for each subtask). Different runs can reflect e.g., different solutions or different configurations of the same system.
 
@@ -135,7 +135,7 @@ We consider the following baselines to allow participants to assess their result
 ### :alarm_clock: Important dates
 
 - ~~**Feb 7th, 2023**: The data (train and dev) and the evaluation scorer are provided to participants~~
-- **May 7th-14th, 2023**: Evaluation window: participants submit predictions on the provided test data
+- **May 7th-17th ~~7th-14th~~, 2023**: Evaluation window: participants submit predictions on the provided test data
 - **Jun 14th, 2023**: Submission of system description papers due
 - **Jul 10th, 2023**: Notification of papers' acceptance to participants
 - **Jul 25th, 2023**: Camera-ready papers due
