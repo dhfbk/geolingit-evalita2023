@@ -98,11 +98,12 @@ id	text	latitude	longitude
 Predictions will be evaluated according to **macro F1 score** (Subtask A, *the higher, the better*) and **mean distance in km** (Subtask B, *the lower, the better*). We provide participants with a scorer (i.e., `eval.py`). The usage is the following:
 
 ```
-python eval.py -S $SUBTASK -G $GOLD_FILEPATH -P $PRED_FILEPATH
+python eval.py -S $SUBTASK -G $GOLD_FILEPATH -P $PRED_FILEPATH -D $DATA_SPLIT
 ```
 - `$SUBTASK`: The subtask the run refers to. Choices: ['`a`', '`b`'].
 - `$GOLD_FILEPATH`: Path to the gold standard for the subtask.
 - `$PRED_FILEPATH`: Path to the file that contains predictions for the subtask, with the same format as `$GOLD_FILEPATH`.
+- `$DATA_SPLIT`: The data split the actual and predicted files refer to. Choices: ['`dev`', '`test`'].
 
 #### Requirements
 
@@ -135,8 +136,8 @@ We consider the following baselines to allow participants to assess their result
 ### :alarm_clock: Important dates
 
 - ~~**Feb 7th, 2023**: The data (train and dev) and the evaluation scorer are provided to participants~~
-- **May 7th-17th ~~7th-14th~~, 2023**: Evaluation window: participants submit predictions on the provided test data
-- **Jun 14th, 2023**: Submission of system description papers due
+- ~~**May 7th-17th, 2023**: Evaluation window: participants submit predictions on the provided test data~~
+- **Jun 14th, 2023**: Submission deadline for system description papers by participants
 - **Jul 10th, 2023**: Notification of papers' acceptance to participants
 - **Jul 25th, 2023**: Camera-ready papers due
 - **Sep 7th-8th, 2023**: EVALITA 2023 Workshop in Parma, Italy
