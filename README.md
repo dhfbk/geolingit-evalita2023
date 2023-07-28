@@ -137,7 +137,7 @@ We consider the following baselines to allow participants to assess their result
 
 - ~~**Feb 7th, 2023**: The data (train and dev) and the evaluation scorer are provided to participants~~
 - ~~**May 7th-17th, 2023**: Evaluation window: participants submit predictions on the provided test data~~
-- **Jun 14th, 2023**: Submission deadline for system description papers by participants
-- **Jul 10th, 2023**: Notification of papers' acceptance to participants
-- **Jul 25th, 2023**: Camera-ready papers due
+- ~~**Jun 16th, 2023**: Submission deadline for system description papers by participants~~
+- ~~**Jul 12th, 2023**: Notification of papers' acceptance to participants~~
+- ~~**Jul 25th, 2023**: Camera-ready papers due~~
 - **Sep 7th-8th, 2023**: EVALITA 2023 Workshop in Parma, Italy
