@@ -1,6 +1,6 @@
 # :earth_africa: GeoLingIt shared task
 
-This repository contains useful materials related to the [GeoLingIt shared task](https://sites.google.com/view/geolingit) at [EVALITA 2023](https://www.evalita.it/campaigns/evalita-2023/). You can find more information about how to participate, how data looks like, and which subtasks and tracks are available on the [shared task website](https://sites.google.com/view/geolingit).
+This repository contains useful materials related to the [GeoLingIt shared task](https://sites.google.com/view/geolingit) at [EVALITA 2023](https://www.evalita.it/campaigns/evalita-2023/). You can find more information about how it was possible to participate, how data looks like, and which subtasks and tracks were available on the [shared task website](https://sites.google.com/view/geolingit).
 
 - :page_with_curl: **[Get the data](#page_with_curl-get-the-data)**
 - :triangular_ruler: **[Data format](#triangular_ruler-data-format)**
@@ -12,7 +12,9 @@ This repository contains useful materials related to the [GeoLingIt shared task]
 
 ### :page_with_curl: Get the data
 
-If you are interested in participating in the GeoLingIt shared task, please fill out the [**expression of interest form**](https://forms.gle/TW2NveAZMZodF7Z59) by EVALITA organizers (by Apr 30th, 2023) indicating **"GeoLingIt – Geolocation of Linguistic Variation in Italy"** as preference. Once this date has passed, please contact us at geolingit@gmail.com. We will send to you the link to join the dedicated Google Group, from where you can obtain the development data. There you can keep in touch with us and ask any shared task-related questions.
+The data used in the context of the shared task is available in the [DiatopIt repository](https://github.com/dhfbk/diatopit).
+
+~~If you are interested in participating in the GeoLingIt shared task, please fill out the [**expression of interest form**](https://forms.gle/TW2NveAZMZodF7Z59) by EVALITA organizers (by Apr 30th, 2023) indicating **"GeoLingIt – Geolocation of Linguistic Variation in Italy"** as preference. Once this date has passed, please contact us at geolingit@gmail.com. We will send to you the link to join the dedicated Google Group, from where you can obtain the development data. There you can keep in touch with us and ask any shared task-related questions.~~
 
 ### :triangular_ruler: Data format
 
