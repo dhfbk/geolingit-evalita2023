@@ -2,17 +2,22 @@
 
 This repository contains useful materials related to the [GeoLingIt shared task](https://sites.google.com/view/geolingit) at [EVALITA 2023](https://www.evalita.it/campaigns/evalita-2023/). You can find more information about how it was possible to participate, how data looks like, and which subtasks and tracks were available on the [shared task website](https://sites.google.com/view/geolingit).
 
+The overview and insights from the shared task are described in:
+
+Alan Ramponi and Camilla Casula. 2023. **GeoLingIt at EVALITA 2023: Overview of the Geolocation of Linguistic Variation in Italy Task**. In *Proceedings of the Eighth Evaluation Campaign of Natural Language Processing and Speech Tools for Italian. Final Workshop (EVALITA 2023)*, CEUR.org, Parma, Italy. [[cite]](#citation) [[paper]](https://ceur-ws.org/Vol-3473/paper12.pdf)
+
 - :page_with_curl: **[Get the data](#page_with_curl-get-the-data)**
 - :triangular_ruler: **[Data format](#triangular_ruler-data-format)**
 - :rocket: **[Submission requirements](#rocket-submission-requirements)**
 - :bar_chart: **[Evaluation and scorer](#bar_chart-evaluation-and-scorer)**
 - :pushpin: **[Baselines](#pushpin-baselines)**
 - :alarm_clock: **[Important dates](#alarm_clock-important-dates)**
+- :paperclip: **[How to cite](#citation)**
 
 
 ### :page_with_curl: Get the data
 
-The data used in the context of the shared task is available in the [DiatopIt repository](https://github.com/dhfbk/diatopit).
+Instructions on how to obtain the data are available in the [DiatopIt repository](https://github.com/dhfbk/diatopit).
 
 ~~If you are interested in participating in the GeoLingIt shared task, please fill out the [**expression of interest form**](https://forms.gle/TW2NveAZMZodF7Z59) by EVALITA organizers (by Apr 30th, 2023) indicating **"GeoLingIt – Geolocation of Linguistic Variation in Italy"** as preference. Once this date has passed, please contact us at geolingit@gmail.com. We will send to you the link to join the dedicated Google Group, from where you can obtain the development data. There you can keep in touch with us and ask any shared task-related questions.~~
 
@@ -142,4 +147,38 @@ We consider the following baselines to allow participants to assess their result
 - ~~**Jun 16th, 2023**: Submission deadline for system description papers by participants~~
 - ~~**Jul 12th, 2023**: Notification of papers' acceptance to participants~~
 - ~~**Jul 25th, 2023**: Camera-ready papers due~~
-- **Sep 7th-8th, 2023**: EVALITA 2023 Workshop in Parma, Italy
+- ~~**Sep 7th-8th, 2023**: EVALITA 2023 Workshop in Parma, Italy~~
+
+### Citation
+
+If you refer to the GeoLingIt shared task in your work, please cite our paper as follows:
+
+```
+@inproceedings{ramponi-casula-2023-geolingit,
+    title={{G}eo{L}ing{I}t at {EVALITA} 2023: Overview of the Geolocation of Linguistic Variation in {I}taly Task},
+    author={Ramponi, Alan and Casula, Camilla},
+    booktitle={Proceedings of the Eighth Evaluation Campaign of Natural Language Processing and Speech Tools for Italian. Final Workshop (EVALITA 2023)},
+    publisher = {CEUR.org},
+    year = {2023},
+    month = {September},
+    address = {Parma, Italy}
+}
+```
+
+If you refer, use or build on top of the dataset used in the context of the shared task, please cite the following instead:
+
+```
+@inproceedings{ramponi-casula-2023-diatopit,
+    title = "{D}iatop{I}t: A Corpus of Social Media Posts for the Study of Diatopic Language Variation in {I}taly",
+    author = "Ramponi, Alan  and
+      Casula, Camilla",
+    booktitle = "Tenth Workshop on NLP for Similar Languages, Varieties and Dialects (VarDial 2023)",
+    month = may,
+    year = "2023",
+    address = "Dubrovnik, Croatia",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.vardial-1.19",
+    pages = "187--199",
+}
+```
+
